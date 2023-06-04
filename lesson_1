@@ -1,1 +1,24 @@
+def assert_equals(actual, expected):
+    assert actual == expected, f'Expected {expected}, got {actual}'
 
+def fizz_buzz(n):
+    if n % 15 == 0:
+        return "FizzBuzz"
+    if n % 3 == 0:
+        return "Fizz"
+    if n % 5 == 0:
+        return "Buzz"
+    return n
+user_input = int(input("please enter a number: "))
+num_list = []
+for i in range(user_input):
+    num_list.append(fizz_buzz(i+1))
+print(num_list)
+
+assert_equals(fizz_buzz(1), 1)
+assert_equals(fizz_buzz(2), 2)
+assert_equals(fizz_buzz(3), "Fizz")
+print(assert_equals(fizz_buzz(5), "Buzz"))
+print(assert_equals(fizz_buzz(6), "Fizz"))
+print(assert_equals(fizz_buzz(10), "Buzz"))
+print(assert_equals(fizz_buzz(15), "FizzBuzz"))
